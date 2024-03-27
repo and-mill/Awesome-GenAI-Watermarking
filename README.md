@@ -1,7 +1,8 @@
 # Awesome-GenAI-Watermarking
-This repo include papers about the watermarking methods for generative AI. For now, it focuses on the visual domain.
+This repo include papers about the watermarking methods for generative AI models. For now, it focuses on the visual domain.
    
-# Visual Watermarking Papers
+# Visual Domain
+## Papers on Watermarking GenAI Models 
 | Id  | Paper                                                                                                                                                                                                                         | Venue                                | Venue Year / Last Updated | Alternative Source                                               | Free PDF                                                 | Notes                                                                           |
 |-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|---------------------------|------------------------------------------------------------------|----------------------------------------------------------|---------------------------------------------------------------------------------|
 | 1.  | [The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html)) | ICCV                                 | 2023                      | [Code](https://github.com/facebookresearch/stable_signature.git) | [Arxiv](https://arxiv.org/abs/2303.15435)                | -                                                                               |
@@ -22,7 +23,7 @@ This repo include papers about the watermarking methods for generative AI. For n
 | 16. | Hey That's Mine Imperceptible Watermarks are Preserved in Diffusion Generated Outputs                                                                                                                                         | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2308.11123)                | -                                                                               |
 | 17. | DUAW: Data-free Universal Adversarial Watermark against Stable Diffusion Customization                                                                                                                                        | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2308.09889)                | -                                                                               |
 
-# Related
+## Related News
 - [Coalition for Content Provenance and Authenticity (C2PA)](https://c2pa.org/)
   - [Specifications](https://c2pa.org/specifications/specifications/1.3/index.html)
     - [Explainer](https://c2pa.org/specifications/specifications/1.2/explainer/Explainer.html)
@@ -37,3 +38,10 @@ This repo include papers about the watermarking methods for generative AI. For n
   - In Beta (as of 26 Mar 2024)
   - Closed off as can be (as of 26 Mar 2024)
 
+# Papers on Classic Watermarking Using Deep Learning (only slightly related, but still interesting)
+| Id | Paper                                                                                                                                                                | Venue | Venue Year / Last Updated | Alternative Source         | Free PDF                   | Notes |
+|----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|---------------------------|----------------------------|----------------------------|-------|
+| 1. | [Free Fine-tuning: A Plug-and-Play Watermarking Scheme for Deep Neural Networks](https://dl.acm.org/doi/10.1145/3581783.3612331))                                    | MM    | 2023                      | Did not looked for it yet  | Did not looked for it yet  | -     |
+| 2. | [Share on Adversarial Attack for Robust Watermark Protection Against Inpainting-based and Blind Watermark Removers](https://dl.acm.org/doi/10.1145/3581783.3612034)) | MM    | 2023                      | Did not looked for it yet  | Did not looked for it yet  | -     |
+| 3. | [A Novel Deep Video Watermarking Framework with Enhanced Robustness to H.264/AVC Compression](https://dl.acm.org/doi/10.1145/3581783.3612270))                       | MM    | 2023                      | Did not looked for it yet  | Did not looked for it yet  | -     |
+| 4. | [Practical Deep Dispersed Watermarking with Synchronization and Fusion](https://dl.acm.org/doi/10.1145/3581783.3612015))                                             | MM    | 2023                      | Did not looked for it yet  | Did not looked for it yet  | -     |
