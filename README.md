@@ -24,6 +24,14 @@ domain.
 | [Robustness of AI-Image Detectors: Fundamental Limits and Practical Attacks](https://openreview.net/forum?id=dLoAdIKENc&referrer=%5Bthe%20profile%20of%20Soheil%20Feizi%5D(%2Fprofile%3Fid%3D~Soheil_Feizi2))                | ICLR (Poster)                        | 2024                      | [code](https://github.com/mehrdadsaberi/watermark_robustness)    | [Arxiv](https://arxiv.org/abs/2310.00076)                | - Watermark removal and forgery, analysis on the tradeoff between watermark fidelity and robustness                                                                                                                                                                                                                                                                                              |
 | A Transfer Attack to Image Watermarks                                                                                                                                                                                        | -                                    | 2024                      | -                                                                | [Arxiv](https://arxiv.org/abs/2403.15365)                | - Watermark removal by "no-box"-attack on detectors (no access to detector-API, instead training classifier to distinguish watermarked and vanilla images)                                                                                                                                                                                                                                       |
 
+## Differences Between Watermarking Schemes
+- Static vs. Dynamic
+  - Static watermarking: "[...] specific pattern in its static content, such as a particular distribution of parameters" (see "Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process") -> TODO
+  - Dynamic Watermarking: "[...] specific pattern in model’s dynamic contents, such as its behavior.", e.g. trigger-prompt-watermark-backdoors
+- Model Watermarking vs. Post-Hoc Watermarking
+  - Model Watermarking: The model is manipulated in a way that its usual generating process produces watermarked output - This DOES protect open models
+  - Post-Hoc Watermarking: The Watermark is added after the fact, in a separate process. -> This does NOT protect open models, as the watermark embedding procedure can be simply disabled
+
 ## Related News
 
 - [Coalition for Content Provenance and Authenticity (C2PA)](https://c2pa.org/)
