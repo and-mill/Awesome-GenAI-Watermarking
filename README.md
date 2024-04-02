@@ -2,7 +2,12 @@
 
 This repo include papers about the watermarking methods for generative AI models. For now, it focuses on the visual domain
 
-Why watermark models? Watermarking is **a** method for embedding a hidden signal into a digital asset that. This primarily helps to solve the problem of **deep fake detection** (Is a digit asset AI-generated?) and **deep fake attribution** (By whom and/or through which means has it been generated?)
+Taken from "RoSteALS: Robust Steganography using Autoencoder Latent Space":
+Watermarking is **a** method for embedding an imperceptible, but recoverable signal (payload) into a digital asset (cover).
+
+# Watermarking Goals
+- **deep fake detection** (Is a digit asset AI-generated?)
+- **deep fake attribution** (By whom and/or through which means has it been generated?)
 
 # Papers on Watermarking Diffusion Models for Generated Asset Detection and User Identification
 
@@ -23,14 +28,18 @@ Why watermark models? Watermarking is **a** method for embedding a hidden signal
 | [Robustness of AI-Image Detectors: Fundamental Limits and Practical Attacks](https://openreview.net/forum?id=dLoAdIKENc&referrer=%5Bthe%20profile%20of%20Soheil%20Feizi%5D(%2Fprofile%3Fid%3D~Soheil_Feizi2))                | ICLR (Poster)                        | 2024                      | [code](https://github.com/mehrdadsaberi/watermark_robustness)    | [Arxiv](https://arxiv.org/abs/2310.00076)                | - Watermark removal and forgery, analysis on the tradeoff between watermark fidelity and robustness                                                                                                                                                                                                                                                                                              |
 | A Transfer Attack to Image Watermarks                                                                                                                                                                                        | -                                    | 2024                      | -                                                                | [Arxiv](https://arxiv.org/abs/2403.15365)                | - Watermark removal by "no-box"-attack on detectors (no access to detector-API, instead training classifier to distinguish watermarked and vanilla images)                                                                                                                                                                                                                                       |
 
-## Differences Between Watermarking Schemes
+# Differences Between Watermarking Schemes
 - Model Watermarking vs. Post-Hoc Watermarking
   - Model Watermarking: The model is manipulated in a way that its usual generating process produces watermarked output - This DOES protect open models
   - Post-Hoc Watermarking: The Watermark is added after the fact, in a separate process. -> This does NOT protect open models, as the watermark embedding procedure can be simply disabled
 - Static vs. Dynamic Watermarking
   - Static watermarking: "[...] specific pattern in its static content, such as a particular distribution of parameters" (see "Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process") -> TODO
   - Dynamic Watermarking: "[...] specific pattern in model’s dynamic contents, such as its behavior.", e.g. trigger-prompt-watermark-backdoors
-- Mechanism of training the watermarking behaviour into a model
+    - This is a method for watermarking a model, in the sense that the model is marked, instead of its output. It requires at least API-access to the model, as the watermark will not be present in all outputs.
+    - Examples for introducing backdoors (not for watermarking specifically) into diffusion models:
+      - [TrojDiff: Trojan Attacks on Diffusion Models with Diverse Targets](https://arxiv.org/abs/2303.05762)
+      - [How to Backdoor Diffusion Models?](https://arxiv.org/abs/2212.05400)
+- Mechanism of bringing watermarks into a model
   - Via Watermarked training data (e.g. [Artificial Fingerprinting for Generative Models: Rooting Deepfake Attribution in Training Data](https://ieeexplore.ieee.org/document/9711167)) -> "Plug-and-play", architecture-agnostic solution
   - Joint fine-tuning of model and a decoder (taken from a encoder/decoder-pair) on few samples ([The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html)) -> Requires latent generative model
 - Flexibility: How quick can a model watermarked with a secret message be obtained:
@@ -38,17 +47,30 @@ Why watermark models? Watermarking is **a** method for embedding a hidden signal
   - Requiring fine-tuning for each watermarked model (e.g. [The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html))
   - Full flexibility, no fine-tuning required (e.g. using message matrix as in [Flexible and Secure Watermarking for Latent Diffusion Model](https://dl.acm.org/doi/10.1145/3581783.3612448)
 
+# What Information is Transported by the Watermark?
+- Mentioned in "RoSteALS: Robust Steganography using Autoencoder Latent Space"
+  - Identifier in provenance database (can replace perceptual hashing) 
+  - Generated asset yes/no
+
 # Attacks on Watermarking
 - Watermark removal
   - Removing a watermark from a given digital asset
-  - Damage Scenario: A fake asset can be claimed to be real (Misinformation, Sensor spoofing (mentioned in [Responsible Disclosure of Generative Models Using Scalable Fingerprinting](https://openreview.net/forum?id=sOK-zS6WHB))))
-  - Robustness property: Removing the watermark should decrease the asset quality. This negates the usefulness of the asset for malicious goals
-- Forgery of watermarks
+  - Attacker goals
+    - A fake asset can be claimed to be real
+      - Disable IP claims
+      - Misinformation
+      - Sensor spoofing (mentioned in [Responsible Disclosure of Generative Models Using Scalable Fingerprinting](https://openreview.net/forum?id=sOK-zS6WHB))))
+  - Robustness property
+    - Removing the watermark should decrease the asset quality. This negates the usefulness of the asset for malicious goals
+- Watermark forgery
   - Adding a watermark to a given digital asset
-  - Damage Scenario: A real asset can be denounced as fake (Misinformation)
+  - Attacker goal
+    - False IP claims
+    - A real asset can be denounced as fake (Misinformation)
 - Model purification
   - A watermarked model which should only produce watermarked output, even if distributed to untrusted parties (i.e. Stable Signature), is "purified" in a way that removes the watermarks in its output.
-  - Robustness property: Removing the watermark functionality of the model should decrease the output quality. This negates the usefulness of the asset for malicious goals
+  - Robustness property
+    - Removing the watermark functionality of the model should decrease the output quality. This negates the usefulness of the asset for malicious goals
 
 ## Threat models
 - Whitebox
@@ -116,5 +138,3 @@ Why watermark models? Watermarking is **a** method for embedding a hidden signal
 | [A Novel Deep Video Watermarking Framework with Enhanced Robustness to H.264/AVC Compression](https://dl.acm.org/doi/10.1145/3581783.3612270))                       | MM            | 2023                      | Did not look for it yet                                       | Did not look for it yet                       | -                                                                                                                                                                                                                         |
 | [Practical Deep Dispersed Watermarking with Synchronization and Fusion](https://dl.acm.org/doi/10.1145/3581783.3612015))                                             | MM            | 2023                      | Did not look for it yet                                       | Did not look for it yet                       | -                                                                                                                                                                                                                         |
 | Generalizable Synthetic Image Detection via Language-guided Contrastive Learning                                                                                     | -             | 2023                      | [code](https://github.com/HighwayWu/LASTED)                   | [Arxiv](https://arxiv.org/abs/2305.13800)     | - Is on GenAI image detection, not watermarking                                                                                                                                                                           |
-
-TODO: Need to add categories regarding the type of model which is watermarked.
