@@ -152,3 +152,46 @@ Watermarking is a method for embedding an imperceptible, but recoverable signal 
 | [Enhancing the Robustness of Deep Learning Based Fingerprinting to Improve Deepfake Attribution](https://dl.acm.org/doi/abs/10.1145/3551626.3564981)                                            | MM-Asia               | 2022                      | -                                                             | -                                             | - Is not about watermarking, but transformation-robustness strategies for watermarks                                                                                                                                      |
 | [You are caught stealing my winning lottery ticket! Making a lottery ticket claim its ownership](https://proceedings.neurips.cc/paper/2021/hash/0dfd8a39e2a5dd536c185e19a804a73b-Abstract.html) | NeurIPS               | 2021                      | [code](https://github.com/VITA-Group/NO-stealing-LTH.)        | [Arxiv](https://arxiv.org/abs/2111.00162)     | - Watermarking the sparsity mask of winning lottery tickets                                                                                                                                                               |
 | [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)                                                            | Frontiers in Big Data | 2021                      | -                                                             | [Arxiv](https://arxiv.org/abs/2009.12153)     | - SOK on model watermarking                                                                                                                                                                                               |
+
+# SOK categories in [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)
+## Taxonomy
+### Embedding method
+- Watermark in model parameters
+- Trigger-Watermark-Backdoor
+### Verification access
+- Whitebox (access model parameters)
+- Blackbox (access via API)
+### Capacity
+- Zero-bit (is watermark exists)
+- Multi-Bit (watermark contains arbitrary info)
+### Authentication
+- Model is watermarked
+- By whom model is watermarked
+### Uniqueness
+- All model instances carry same watermark
+- Different model instances carry different watermarks
+
+## Requirements & Security Goals
+| Goal        | Explaination                               | Motivation                                        |
+|-------------|--------------------------------------------|---------------------------------------------------|
+| Fidelity    | High prediction quality on original tasks  | model performance shouldn't significantly degrade |
+| Robustness  | Watermark should resist removal            | protects against copyright evasion                |
+| Reliability | Minimal false negatives                    | ensures rightful ownership is recognized          |
+| Integrity   | Minimal false positives                    | prevents wrongful accusations of theft            |
+| Capacity    | Supports large information amounts         | allows comprehensive watermarks                   |
+| Secrecy     | Watermark must be secret and undetectable  | prevents unauthorized detection                   |
+| Efficiency  | Fast watermark insertion and verification  | avoids computational burden                       |
+| Generality  | Independent of datasets and ML algorithms  | facilitates widespread application                |
+
+## Threat Model
+### Attacker Knowledge
+Attacker knows
+1. existence of the watermark
+2. model and its parameters
+3. watermarking scheme used
+4. (parts of) the training data
+5. (parts of) the watermark itself or the trigger dataset
+### Attacker Capabilities
+TODO
+### Attacker Objectives
+TODO
