@@ -2,8 +2,7 @@
 
 This repo include papers about the watermarking methods for generative AI models. For now, it focuses on the visual domain
 
-Taken from "RoSteALS: Robust Steganography using Autoencoder Latent Space":
-Watermarking is **a** method for embedding an imperceptible, but recoverable signal (payload) into a digital asset (cover).
+Watermarking is a method for embedding an imperceptible, but recoverable signal (payload) into a digital asset (cover).
 
 # Watermarking Goals
 - **deep fake detection** (Is a digit asset AI-generated?)
@@ -33,23 +32,23 @@ Watermarking is **a** method for embedding an imperceptible, but recoverable sig
   - Model Watermarking: The model is manipulated in a way that its usual generating process produces watermarked output - This DOES protect open models
   - Post-Hoc Watermarking: The Watermark is added after the fact, in a separate process. -> This does NOT protect open models, as the watermark embedding procedure can be simply disabled
 - Static vs. Dynamic Watermarking
-  - Static watermarking: "[...] specific pattern in its static content, such as a particular distribution of parameters" (see "Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process") -> TODO
+  - Static watermarking: "[...] specific pattern in its static content, such as a particular distribution of parameters" (see "Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process")
   - Dynamic Watermarking: "[...] specific pattern in model’s dynamic contents, such as its behavior.", e.g. trigger-prompt-watermark-backdoors
-    - This is a method for watermarking a model, in the sense that the model is marked, instead of its output. It requires at least API-access to the model, as the watermark will not be present in all outputs.
-    - Examples for introducing backdoors (not for watermarking specifically) into diffusion models:
+    - Requires at least API-access to the model, as the watermark will only be present upon specific trigger
+    - Examples for introducing backdoors in general (not for watermarking specifically) into diffusion models:
       - [TrojDiff: Trojan Attacks on Diffusion Models with Diverse Targets](https://arxiv.org/abs/2303.05762)
       - [How to Backdoor Diffusion Models?](https://arxiv.org/abs/2212.05400)
 - Mechanism of bringing watermarks into a model
-  - Via Watermarked training data (e.g. [Artificial Fingerprinting for Generative Models: Rooting Deepfake Attribution in Training Data](https://ieeexplore.ieee.org/document/9711167)) -> "Plug-and-play", architecture-agnostic solution
-  - Joint fine-tuning of model and a decoder (taken from a encoder/decoder-pair) on few samples ([The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html)) -> Requires latent generative model
+  - Via Watermarked training data (e.g. [Artificial Fingerprinting for Generative Models: Rooting Deepfake Attribution in Training Data](https://ieeexplore.ieee.org/document/9711167)) -> "Plug-and-play", as it works on all architectures due to transferability
+  - Joint fine-tuning of a model and a decoder (taken from a encoder/decoder-pair) on few samples ([The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html)) -> Requires latent generative model
 - Flexibility: How quick can a model watermarked with a secret message be obtained:
   - Requiring full training (e.g. [Artificial Fingerprinting for Generative Models: Rooting Deepfake Attribution in Training Data](https://ieeexplore.ieee.org/document/9711167))
   - Requiring fine-tuning for each watermarked model (e.g. [The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html))
-  - Full flexibility, no fine-tuning required (e.g. using message matrix as in [Flexible and Secure Watermarking for Latent Diffusion Model](https://dl.acm.org/doi/10.1145/3581783.3612448)
+  - Full flexibility, no fine-tuning for each model required (e.g. using message matrix as in [Flexible and Secure Watermarking for Latent Diffusion Model](https://dl.acm.org/doi/10.1145/3581783.3612448)
 
 # What Information is Transported by the Watermark?
 - Mentioned in "RoSteALS: Robust Steganography using Autoencoder Latent Space"
-  - Identifier in provenance database (can replace perceptual hashing) 
+  - Identifier of the asset in provenance database (can replace perceptual hashing) 
   - Generated asset yes/no
 
 # Attacks on Watermarking
@@ -79,29 +78,29 @@ Watermarking is **a** method for embedding an imperceptible, but recoverable sig
 
 # Related News
 - [Coalition for Content Provenance and Authenticity (C2PA)](https://c2pa.org/)
-- Is based on a trust model with signing authorities which certify signer of some digital asset through a chain of trust, similar to web PKI. 
-    - [C2PA Specifications](https://c2pa.org/specifications/specifications/1.3/index.html)
-        - [Explainer](https://c2pa.org/specifications/specifications/1.2/explainer/Explainer.html)
-            - "Provenance generally refers to the facts about the history of a piece of digital content assets (image,
-              video, audio recording, document). C2PA enables the authors of provenance data to securely bind statements
-              of provenance data to instances of content using their unique credentials. These provenance statements are
-              called assertions by the C2PA. They may include assertions about who created the content and how, when,
-              and where it was created. They may also include assertions about when and how it was edited throughout its
-              life. The content author, and publisher (if authoring provenance data) always has control over whether to
-              include provenance data as well as what assertions are included, such as whether to include identifying
-              information (in order to allow for anonymous or pseudonymous assets). Included assertions can be removed
-              in later edits without invalidating or removing all of the included provenance data in a process called
-              redaction."
-            - "In the C2PA Specifications, trust decisions are made by the consumer of the asset based on the identity
-              of the actor(s) who signed the provenance data along with the information in the assertions contained in
-              the provenance. This signing takes place at each significant moment in an asset’s life (e.g., creation,
-              editing, etc.) through the use of the actor’s unique credentials and ensures that the provenance data
-              remains cryptographically bound to the newly created or updated asset."
-            - -> Less about Watermarking, and more about allowing authors and subsequent actors to sign assets and make
-              this act publicly known to establish the asset's history.
+  - Is based on a trust model with signing authorities which certify signer of some digital asset through a chain of trust, similar to internet PKI. 
+  - [C2PA Specifications](https://c2pa.org/specifications/specifications/1.3/index.html)
+      - [Explainer](https://c2pa.org/specifications/specifications/1.2/explainer/Explainer.html)
+          - "Provenance generally refers to the facts about the history of a piece of digital content assets (image,
+            video, audio recording, document). C2PA enables the authors of provenance data to securely bind statements
+            of provenance data to instances of content using their unique credentials. These provenance statements are
+            called assertions by the C2PA. They may include assertions about who created the content and how, when,
+            and where it was created. They may also include assertions about when and how it was edited throughout its
+            life. The content author, and publisher (if authoring provenance data) always has control over whether to
+            include provenance data as well as what assertions are included, such as whether to include identifying
+            information (in order to allow for anonymous or pseudonymous assets). Included assertions can be removed
+            in later edits without invalidating or removing all of the included provenance data in a process called
+            redaction."
+          - "In the C2PA Specifications, trust decisions are made by the consumer of the asset based on the identity
+            of the actor(s) who signed the provenance data along with the information in the assertions contained in
+            the provenance. This signing takes place at each significant moment in an asset’s life (e.g., creation,
+            editing, etc.) through the use of the actor’s unique credentials and ensures that the provenance data
+            remains cryptographically bound to the newly created or updated asset."
+          - -> Less about Watermarking, and more about allowing authors and subsequent actors to sign assets and make
+            this act publicly known to establish the asset's history.
 - [Open-source tools for content authenticity and provenance](https://opensource.contentauthenticity.org/)
-  - Uses manifests as defined in [C2PA Specifications](https://c2pa.org/specifications/specifications/1.3/index.html)
-  - Enables camera manufacturers to insert authenticity meta-data on-device 
+  - Uses manifests defined in [C2PA Specifications](https://c2pa.org/specifications/specifications/1.3/index.html)
+  - Enables camera manufacturers to insert authenticity meta-data on-device at time of capture
 - [Deepmind SynthID](https://deepmind.google/technologies/synthid/)
     - Images ([Vertex AI imagen](https://cloud.google.com/vertex-ai/generative-ai/docs/image/overview))
     - Audio ([Google DeepMind's Lyria](https://deepmind.google/discover/blog/transforming-the-future-of-music-creation/))
@@ -111,8 +110,8 @@ Watermarking is **a** method for embedding an imperceptible, but recoverable sig
     - In Beta (as of 26 Mar 2024)
     - Closed off as can be (as of 26 Mar 2024)
 - Google hosted a workshop in June 2023 ([Identifying and Mitigating the Security Risks of Generative AI](https://arxiv.org/abs/2308.14840)): "Watermarking was mentioned as a promising mitigation. They are robust when attacker has no access to detection algorithm"
-- Watermarking is identified as tool for establishing trust in a post GenAI environment ([OpenAI moving AI governance forward statement](https://openai.com/blog/moving-ai-governance-forward), [Google "Our commitment to advancing bold and responsible AI, together"](https://blog.google/outreach-initiatives/public-policy/our-commitment-to-advancing-bold-and-responsible-ai-together/), [Biden-⁠Harris Administration Secures Voluntary Commitments from Leading Artificial Intelligence Companies to Manage the Risks Posed by AI ](https://www.whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/))
-- Watermarks can be easily inserted into Stable Diffusion models [invisible-watermark repo](https://github.com/ShieldMnt/invisible-watermark) and referenced by the official [Stable Diffusion repo](https://github.com/CompVis/stable-diffusion?tab=readme-ov-file)
+- Watermarking is identified as tool for establishing trust in a post GenAI environment by big tech ([OpenAI moving AI governance forward statement](https://openai.com/blog/moving-ai-governance-forward), [Google "Our commitment to advancing bold and responsible AI, together"](https://blog.google/outreach-initiatives/public-policy/our-commitment-to-advancing-bold-and-responsible-ai-together/)) and government ([Biden-⁠Harris Administration Secures Voluntary Commitments from Leading Artificial Intelligence Companies to Manage the Risks Posed by AI ](https://www.whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/))
+- Watermarks can already be easily inserted into Stable Diffusion models (This method [invisible-watermark repo](https://github.com/ShieldMnt/invisible-watermark) is referenced by the official [Stable Diffusion repo](https://github.com/CompVis/stable-diffusion?tab=readme-ov-file))
 
 # Misc Papers (to be categorized...)
 
