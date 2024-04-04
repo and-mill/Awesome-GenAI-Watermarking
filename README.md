@@ -10,22 +10,22 @@ Watermarking is a method for embedding an imperceptible, but recoverable signal 
 
 # Papers on Watermarking Diffusion Models
 
-| Paper                                                                                                                                                                                                                        | Venue                                | Venue Year / Last Updated | Code                                                             | Alternative PDF Source                                   | Notes                                                                                                                                                                                                                                                                                                                                                                    |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|---------------------------|------------------------------------------------------------------|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html) | ICCV                                 | 2023                      | [code](https://github.com/facebookresearch/stable_signature.git) | [Arxiv](https://arxiv.org/abs/2303.15435)                | - Finetune a model in accordance with encoder/decoder to reveal a secret message in its output.<br>- robust to watermark removal and model purification (quality deterioration)<br>- Static watermarking                                                                                                                                                                 |
-| [Flexible and Secure Watermarking for Latent Diffusion Model](https://dl.acm.org/doi/10.1145/3581783.3612448)                                                                                                                | MM                                   | 2023                      | -                                                                | -                                                        | - References Stable Signature and improves by adding flexibility by allowing for embedding different messages w.o. finetuning                                                                                                                                                                                                                                            |
-| [RoSteALS: Robust Steganography using Autoencoder Latent Space](https://ieeexplore.ieee.org/document/10208817)                                                                                                               | CVPR Workshops (CVPRW)               | 2023                      | [code](https://github.com/coriverchen/Robust_Steganography.git)  | [Arxiv](https://arxiv.org/abs/2304.03400)                | -                                                                                                                                                                                                                                                                                                                                                                        |
-| [DiffusionShield: A Watermark for Copyright Protection against Generative Diffusion Models](https://neurips.cc/virtual/2023/74895)                                                                                           | NeurIPS Workshop on Diffusion Models | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2306.04642)                | -                                                                                                                                                                                                                                                                                                                                                                        |
-| A Recipe for Watermarking Diffusion Models                                                                                                                                                                                   | -                                    | 2024                      | [code](https://github.com/yunqing-me/WatermarkDM.git)            | [Arxiv](https://arxiv.org/abs/2303.10137)                | - Framework for 1. small unconditional/class-conditional DMs via training from scratch on watermarked data and 2. text-to-image DMs via finetuning a backdoor-trigger-output<br>- Lots of references on watermarking discriminative models<br>- Static watermarking                                                                                                      |
-| Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust                                                                                                                                        | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2305.20030)                | - Embedding tree-ring into FFT of Noise Vector<br>- TODO: Is this just a coarse variant of embedding a message as in stable signature?<br>- TODO: Very robust against even malicious attacks at time of upload?<br>- Says: "watermark currently deployed in Stable Diffusion is [Digital Watermarking and Steganography](https://dl.acm.org/doi/book/10.5555/1564551#)"  |
-| Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process                                                                                                                                     | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2306.03436)                | - Threat model: Check ownership of model by having access to the model<br>- Hard to read<br>- Explains difference between **static and dynamic watermarking** with many references                                                                                                                                                                                       |
-| Securing Deep Generative Models with Universal Adversarial Signature                                                                                                                                                         | -                                    | 2023                      | [code](https://github.com/zengxianyu/genwm)                      | [Arxiv](https://arxiv.org/abs/2305.16310)                | - 1. Find optimal signature for an image individually.<br>- 2. Finetune a GenAI model on these images.                                                                                                                                                                                                                                                                   |
-| Watermarking Diffusion Model                                                                                                                                                                                                 | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2305.12502)                | - Finetuning a backdoor-trigger-output<br>- Static watermarking<br>- CISPA authors                                                                                                                                                                                                                                                                                       |
-| Catch You Everything Everywhere: Guarding Textual Inversion via Concept Watermarking                                                                                                                                         | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2309.05940)                | - Guards concepts obtained through textual inversion ([An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion](https://arxiv.org/abs/2208.01618)) from abuse by allowing to identify concepts in generated images.<br>- Very interesting references on company and government stances on watermarking                                |
-| Generative Watermarking Against Unauthorized Subject-Driven Image Synthesis                                                                                                                                                  | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2306.07754)                | - Different from Glaze in that style synthesis from protected source images is not prevented, but recognizable via watermarks<br>- CISPA authors                                                                                                                                                                                                                         |
-| Towards the Vulnerability of Watermarking Artificial Intelligence Generated Content                                                                                                                                          | -                                    | 2024                      | -                                                                | [OpenReview](https://openreview.net/forum?id=xY4861TVUc) | - Watermark removal and forgery in one method, using GAN<br>- References two types of watermarking: **1. Learn/finetune model to produce watermarked output and 2. post-hoc watermarking after the fact** (static vs. dynamic, see "Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process")                                           |
-| [Robustness of AI-Image Detectors: Fundamental Limits and Practical Attacks](https://openreview.net/forum?id=dLoAdIKENc&referrer=%5Bthe%20profile%20of%20Soheil%20Feizi%5D(%2Fprofile%3Fid%3D~Soheil_Feizi2))                | ICLR (Poster)                        | 2024                      | [code](https://github.com/mehrdadsaberi/watermark_robustness)    | [Arxiv](https://arxiv.org/abs/2310.00076)                | - Watermark removal and forgery, analysis on the tradeoff between watermark fidelity and robustness                                                                                                                                                                                                                                                                      |
-| A Transfer Attack to Image Watermarks                                                                                                                                                                                        | -                                    | 2024                      | -                                                                | [Arxiv](https://arxiv.org/abs/2403.15365)                | - Watermark removal by "no-box"-attack on detectors (no access to detector-API, instead training classifier to distinguish watermarked and vanilla images)                                                                                                                                                                                                               |
+| Paper                                                                                                                                                                                                                        | Proceedings/Journal                  | Venue Year / Last Updated | Code                                                             | Alternative PDF Source                                   | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|---------------------------|------------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [The Stable Signature: Rooting Watermarks in Latent Diffusion Models](https://openaccess.thecvf.com/content/ICCV2023/html/Fernandez_The_Stable_Signature_Rooting_Watermarks_in_Latent_Diffusion_Models_ICCV_2023_paper.html) | ICCV                                 | 2023                      | [code](https://github.com/facebookresearch/stable_signature.git) | [Arxiv](https://arxiv.org/abs/2303.15435)                | - Finetune a model in accordance with encoder/decoder to reveal a secret message in its output.<br>- robust to watermark removal and model purification (quality deterioration)<br>- Static watermarking                                                                                                                                                                                                                                                                                      |
+| [Flexible and Secure Watermarking for Latent Diffusion Model](https://dl.acm.org/doi/10.1145/3581783.3612448)                                                                                                                | MM                                   | 2023                      | -                                                                | -                                                        | - References Stable Signature and improves by adding flexibility by allowing for embedding different messages w.o. finetuning                                                                                                                                                                                                                                                                                                                                                                 |
+| [RoSteALS: Robust Steganography using Autoencoder Latent Space](https://ieeexplore.ieee.org/document/10208817)                                                                                                               | CVPR Workshops (CVPRW)               | 2023                      | [code](https://github.com/coriverchen/Robust_Steganography.git)  | [Arxiv](https://arxiv.org/abs/2304.03400)                | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [DiffusionShield: A Watermark for Copyright Protection against Generative Diffusion Models](https://neurips.cc/virtual/2023/74895)                                                                                           | NeurIPS Workshop on Diffusion Models | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2306.04642)                | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| A Recipe for Watermarking Diffusion Models                                                                                                                                                                                   | -                                    | 2024                      | [code](https://github.com/yunqing-me/WatermarkDM.git)            | [Arxiv](https://arxiv.org/abs/2303.10137)                | - Framework for 1. small unconditional/class-conditional DMs via training from scratch on watermarked data and 2. text-to-image DMs via finetuning a backdoor-trigger-output<br>- Lots of references on watermarking discriminative models<br>- Static watermarking                                                                                                                                                                                                                           |
+| Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust                                                                                                                                        | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2305.20030)                | - Embedding tree-ring into FFT of Noise Vector<br>- TODO: Is this just a coarse variant of embedding a message as in stable signature?<br>- TODO: Very robust against even malicious attacks at time of upload?<br> |
+| Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process                                                                                                                                     | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2306.03436)                | - Threat model: Check ownership of model by having access to the model<br>- Hard to read<br>- Explains difference between **static and dynamic watermarking** with many references                                                                                                                                                                                                                                                                                                            |
+| Securing Deep Generative Models with Universal Adversarial Signature                                                                                                                                                         | -                                    | 2023                      | [code](https://github.com/zengxianyu/genwm)                      | [Arxiv](https://arxiv.org/abs/2305.16310)                | - 1. Find optimal signature for an image individually.<br>- 2. Finetune a GenAI model on these images.                                                                                                                                                                                                                                                                                                                                                                                        |
+| Watermarking Diffusion Model                                                                                                                                                                                                 | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2305.12502)                | - Finetuning a backdoor-trigger-output<br>- Static watermarking<br>- CISPA authors                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Catch You Everything Everywhere: Guarding Textual Inversion via Concept Watermarking                                                                                                                                         | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2309.05940)                | - Guards concepts obtained through textual inversion ([An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion](https://arxiv.org/abs/2208.01618)) from abuse by allowing to identify concepts in generated images.<br>- Very interesting references on company and government stances on watermarking                                                                                                                                                     |
+| Generative Watermarking Against Unauthorized Subject-Driven Image Synthesis                                                                                                                                                  | -                                    | 2023                      | -                                                                | [Arxiv](https://arxiv.org/abs/2306.07754)                | - Different from Glaze in that style synthesis from protected source images is not prevented, but recognizable via watermarks<br>- CISPA authors                                                                                                                                                                                                                                                                                                                                              |
+| Towards the Vulnerability of Watermarking Artificial Intelligence Generated Content                                                                                                                                          | -                                    | 2024                      | -                                                                | [OpenReview](https://openreview.net/forum?id=xY4861TVUc) | - Watermark removal and forgery in one method, using GAN<br>- References two types of watermarking: **1. Learn/finetune model to produce watermarked output and 2. post-hoc watermarking after the fact** (static vs. dynamic, see "Intellectual Property Protection of Diffusion Models via the Watermark Diffusion Process")                                                                                                                                                                |
+| [Robustness of AI-Image Detectors: Fundamental Limits and Practical Attacks](https://openreview.net/forum?id=dLoAdIKENc&referrer=%5Bthe%20profile%20of%20Soheil%20Feizi%5D(%2Fprofile%3Fid%3D~Soheil_Feizi2))                | ICLR (Poster)                        | 2024                      | [code](https://github.com/mehrdadsaberi/watermark_robustness)    | [Arxiv](https://arxiv.org/abs/2310.00076)                | - Watermark removal and forgery, analysis on the tradeoff between watermark fidelity and robustness                                                                                                                                                                                                                                                                                                                                                                                           |
+| A Transfer Attack to Image Watermarks                                                                                                                                                                                        | -                                    | 2024                      | -                                                                | [Arxiv](https://arxiv.org/abs/2403.15365)                | - Watermark removal by "no-box"-attack on detectors (no access to detector-API, instead training classifier to distinguish watermarked and vanilla images)                                                                                                                                                                                                                                                                                                                                    |
 
 # Differences Between Watermarking Schemes
 - Model Watermarking vs. Post-Hoc Watermarking
@@ -122,7 +122,7 @@ Watermarking is a method for embedding an imperceptible, but recoverable signal 
     - Closed off as can be (as of 26 Mar 2024)
 - Google hosted a workshop in June 2023 ([Identifying and Mitigating the Security Risks of Generative AI](https://arxiv.org/abs/2308.14840)): "Watermarking was mentioned as a promising mitigation. They are robust when attacker has no access to detection algorithm"
 - Watermarking is identified as tool for establishing trust in a post GenAI environment by big tech ([OpenAI moving AI governance forward statement](https://openai.com/blog/moving-ai-governance-forward), [Google "Our commitment to advancing bold and responsible AI, together"](https://blog.google/outreach-initiatives/public-policy/our-commitment-to-advancing-bold-and-responsible-ai-together/)) and government ([Biden-⁠Harris Administration Secures Voluntary Commitments from Leading Artificial Intelligence Companies to Manage the Risks Posed by AI ](https://www.whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/))
-- Watermarks can already be easily inserted into Stable Diffusion models (This method [invisible-watermark repo](https://github.com/ShieldMnt/invisible-watermark) is referenced by the official [Stable Diffusion repo](https://github.com/CompVis/stable-diffusion?tab=readme-ov-file))
+- Watermarks can already be easily inserted into Stable Diffusion models (This method [invisible-watermark repo](https://github.com/ShieldMnt/invisible-watermark) is referenced by the official [Stable Diffusion repo](https://github.com/CompVis/stable-diffusion?tab=readme-ov-file)). This is based on [Digital Watermarking and Steganography](https://dl.acm.org/doi/book/10.5555/1564551#)" (DwtDct and DwtDctSvd). Also see watermark option in the Stable Diffusion repo https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py#L69.
 
 # Misc Papers (to be categorized...)
 
@@ -151,27 +151,33 @@ Watermarking is a method for embedding an imperceptible, but recoverable signal 
 | Generalizable Synthetic Image Detection via Language-guided Contrastive Learning                                                                                                                | -                     | 2023                      | [code](https://github.com/HighwayWu/LASTED)                   | [Arxiv](https://arxiv.org/abs/2305.13800)     | - Is not about watermarking, but GenAI image detection                                                                                                                                                                    |
 | [Enhancing the Robustness of Deep Learning Based Fingerprinting to Improve Deepfake Attribution](https://dl.acm.org/doi/abs/10.1145/3551626.3564981)                                            | MM-Asia               | 2022                      | -                                                             | -                                             | - Is not about watermarking, but transformation-robustness strategies for watermarks                                                                                                                                      |
 | [You are caught stealing my winning lottery ticket! Making a lottery ticket claim its ownership](https://proceedings.neurips.cc/paper/2021/hash/0dfd8a39e2a5dd536c185e19a804a73b-Abstract.html) | NeurIPS               | 2021                      | [code](https://github.com/VITA-Group/NO-stealing-LTH.)        | [Arxiv](https://arxiv.org/abs/2111.00162)     | - Watermarking the sparsity mask of winning lottery tickets                                                                                                                                                               |
-| [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)                                                            | Frontiers in Big Data | 2021                      | -                                                             | [Arxiv](https://arxiv.org/abs/2009.12153)     | - SOK on model watermarking                                                                                                                                                                                               |
 
-# SOK categories in [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)
-## Taxonomy
-### Embedding method
-- Watermark in model parameters
-- Trigger-Watermark-Backdoor
-### Verification access
-- Whitebox (access model parameters)
-- Blackbox (access via API)
-### Capacity
-- Zero-bit (is watermark exists)
-- Multi-Bit (watermark contains arbitrary info)
-### Authentication
-- Model is watermarked
-- By whom model is watermarked
-### Uniqueness
-- All model instances carry same watermark
-- Different model instances carry different watermarks
+# Survey Papers
+| Paper                                                                                                                                                  | Proceedings/Journal   | Venue Year / Last Updated | Code | Alternative PDF Source                        | Notes |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|---------------------------|------|-----------------------------------------------|-------|
+| [A Comprehensive Survey on Robust Image Watermarking](https://www.sciencedirect.com/science/article/pii/S0925231222002533?ref=cra_js_challenge&fr=njs) | Neurocomputing        | 2022                      | -    | [Arxiv](https://arxiv.org/abs/2207.06909)     | -     |
+| [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)                   | Frontiers in Big Data | 2021                      | -    | [Arxiv](https://arxiv.org/abs/2009.12153)     | -     |
+| A Comprehensive Review on Digital Image Watermarking                                                                                                   | -                     | 2022                      | -    | [Arxiv](https://arxiv.org/abs/2207.06909)     | -     |
 
-## Requirements & Security Goals
+## [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)
+### Taxonomy
+- Embedding method
+  - Watermark in model parameters
+  - Trigger-Watermark-Backdoor
+- Verification access
+  - Whitebox (access model parameters)
+  - Blackbox (access via API)
+- Capacity
+  - Zero-bit (is watermark exists)
+  - Multi-Bit (watermark contains arbitrary info)
+- Authentication
+  - Model is watermarked
+  - By whom model is watermarked
+- Uniqueness
+  - All model instances carry same watermark
+  - Different model instances carry different watermarks
+
+### Requirements & Security Goals
 | Goal        | Explaination                               | Motivation                                        |
 |-------------|--------------------------------------------|---------------------------------------------------|
 | Fidelity    | High prediction quality on original tasks  | model performance shouldn't significantly degrade |
@@ -183,48 +189,49 @@ Watermarking is a method for embedding an imperceptible, but recoverable signal 
 | Efficiency  | Fast watermark insertion and verification  | avoids computational burden                       |
 | Generality  | Independent of datasets and ML algorithms  | facilitates widespread application                |
 
-## Threat Model
-### Attacker Knowledge
-Attacker knows
-1. existence of the watermark
-2. model and its parameters
-3. watermarking scheme used
-4. (parts of) the training data
-5. (parts of) the watermark itself or the trigger dataset
-### Attacker Capabilities (irrelevant)
-- passive (eavesdropping9
-- active (interaction)
-### Attacker Objectives
-- For what is model being used by the attacker? (rather unspecific)
+### Threat Model
+- Attacker Knowledge:
+  1. existence of the watermark
+  2. model and its parameters
+  3. watermarking scheme used
+  4. (parts of) the training data
+  5. (parts of) the watermark itself or the trigger dataset
+- Attacker Capabilities (irrelevant)
+  - passive (eavesdropping9
+  - active (interaction)
+- Attacker Objectives
+  - For what is model being used by the attacker? (rather unspecific)
 
-## Attacks against Watermarking
-### Watermark Detection (weakest))
-### Watermark Suppression
-Avoid watermark verification
-- e.g. dissimulating any presence of a watermark in the model parameters and behavior
-- e.g. suppressing the reactions of the model to the original watermark trigger
-### Watermark Forging
-1. Recovering the legitimate owner’s watermark and claiming ownership (if there is no binding between the watermark and the owner)
-2. Adding a new watermark that creates ambiguity concerning ownership
-3. Identifying a fake watermark within the model that coincidentally acts like a real watermark but actually is not
-### Watermark Overwriting
-1. Adding Watermark to model with deactivating old one (strong)
-2. Adding Watermark to model without deactivating old one (weak)
-### Watermark Removal
-- Depends on
-  1. the presence of a watermark
-  2. the underlying watermarking scheme
-  3. availability of additional data, e.g. for fine-tuning or retraining
-- Methods
-  - Fine-Tuning
-  - Pruning 
-  - Quantization
-  - Distillation
-  - Transfer-Learning
-  - Backdoor Removal
+### Attacks against Watermarking
+- Watermark Detection (weakest))
+- Watermark Suppression, i.e. avoid watermark verification
+  - e.g. dissimulating any presence of a watermark in the model parameters and behavior
+  - e.g. suppressing the reactions of the model to the original watermark trigger
+- Watermark Forging
+  1. Recovering the legitimate owner’s watermark and claiming ownership (if there is no binding between the watermark and the owner)
+  2. Adding a new watermark that creates ambiguity concerning ownership
+  3. Identifying a fake watermark within the model that coincidentally acts like a real watermark but actually is not
+- Watermark Overwriting
+  1. Adding Watermark to model with deactivating old one (strong)
+  2. Adding Watermark to model without deactivating old one (weak)
+- Watermark Removal
+  1. depends on the presence of a watermark
+  2. depends on the underlying watermarking scheme
+  3. depends on availability of additional data, e.g. for fine-tuning or retraining
+     - Methods
+       - Fine-Tuning
+       - Pruning 
+       - Quantization
+       - Distillation
+       - Transfer-Learning
+       - Backdoor Removal
 
-## Categorizing Watermarking Methods
-TODO
-### Embedding Watermarks into Model Parameters
-### Using Pre-Defined Inputs as Triggers
-### Using Model Fingerprints to Identify Potentially Stolen Instances
+### Categorizing Watermarking Methods
+- Embedding Watermarks into Model Parameters
+  - Adding patterns into model which can be verified locally
+- Using Pre-Defined Inputs as Triggers
+  - Adding behaviour triggered by special input
+- Using Model Fingerprints to Identify Potentially Stolen Instances
+  - No additional action needed, just recognizing a model based on some criteria
+
+
