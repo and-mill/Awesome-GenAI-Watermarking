@@ -204,13 +204,13 @@ Watermarking is a method for embedding an imperceptible, but recoverable signal 
   4. (parts of) the training data
   5. (parts of) the watermark itself or the trigger dataset
 - Attacker Capabilities (irrelevant)
-  - passive (eavesdropping9
+  - passive (eavesdropping)
   - active (interaction)
 - Attacker Objectives
   - For what is model being used by the attacker? (rather unspecific)
 
 ### Attacks against Watermarking
-- Watermark Detection (weakest))
+- Watermark Detection (weakest)
 - Watermark Suppression, i.e. avoid watermark verification
   - e.g. dissimulating any presence of a watermark in the model parameters and behavior
   - e.g. suppressing the reactions of the model to the original watermark trigger
