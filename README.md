@@ -5,10 +5,10 @@ This repo include papers about the watermarking methods for generative AI models
 Watermarking is a method for embedding an imperceptible, but recoverable signal (payload) into a digital asset (cover).
 
 # Watermarking Goals
-- **deep fake detection** (Is a digit asset AI-generated?)
+- **Deep fake detection** (Is a digit asset AI-generated?)
   - Counter misinformation
   - Prevent data crawlers from picking up generated content and cause "[Self-Consuming Generative Models Go MAD](https://openreview.net/forum?id=ShjMHfmPs0)"
-- **deep fake attribution** (By whom and/or through which means has it been generated?)
+- **Deep fake attribution** (By whom and/or through which means has it been generated?)
   - IP protection
     - Protect valuable models
     - Protect valuable training data (e.g. style)
