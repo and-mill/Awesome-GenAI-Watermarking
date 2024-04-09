@@ -128,7 +128,8 @@ Microsoft: [Introducing the watermark algorithm for synthetic voice identificati
             the provenance. This signing takes place at each significant moment in an asset’s life (e.g., creation,
             editing, etc.) through the use of the actor’s unique credentials and ensures that the provenance data
             remains cryptographically bound to the newly created or updated asset."
-          - -> Less about Watermarking, and more about allowing authors and subsequent actors to sign assets and make
+          - "Soft bindings are described using soft binding assertions such as via a perceptual hash computed from the digital content or a watermark embedded within the digital content. These soft bindings enable digital content to be matched even if the underlying bits differ, for example due to an asset rendition in a different resolution or encoding format. Additionally, should a C2PA manifest be removed from an asset, but a copy of that manifest remains in a provenance store elsewhere, the manifest and asset may be matched using available soft bindings."
+          - -> allows authors and subsequent actors to sign assets and make
             this act publicly known to establish the asset's history.
 - [Open-source tools for content authenticity and provenance](https://opensource.contentauthenticity.org/)
   - Uses manifests defined in [C2PA Specifications](https://c2pa.org/specifications/specifications/1.3/index.html)
