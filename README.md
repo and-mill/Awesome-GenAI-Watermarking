@@ -177,6 +177,7 @@ With generative models, there are approaches which train the model to produce th
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------------|----------------------------------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [ASVspoof 2021 Challenge](https://www.asvspoof.org/asvspoof2021/asvspoof2021_evaluation_plan.pdf)                                                                                           | -                   | 2021                      | [Github](https://github.com/asvspoof-challenge/2021)                       | [Arxiv](https://arxiv.org/abs/2109.00535)                                      | - Challenge for audio spoofing detection                                                                                                              |
 | [ADD 2022: the first Audio Deep Synthesis Detection Challenge](https://ieeexplore.ieee.org/document/9746939)                                                                                | ICASSP              | 2022                      | [Github](https://github.com/asvspoof-challenge/2021)                       | [Arxiv](https://arxiv.org/abs/2202.08433)                                      | - [Official Chinese challenge website (NO HTTPS!)](http://addchallenge.cn/)                                                                           |
+for more (but older dataset see [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning))
 
 ## 3.3 News on Audio Watermarking
 - Microsoft: [Introducing the watermark algorithm for synthetic voice identification](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/introducing-the-watermark-algorithm-for-synthetic-voice/ba-p/3298548)
@@ -186,6 +187,7 @@ With generative models, there are approaches which train the model to produce th
 - [Github topic: Audio Deepfake Detection](https://github.com/topics/audio-deepfake-detection)
 - [Awesome Deepfakes Detection](https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detection?tab=readme-ov-file#spatiotemporal-based)
 - [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning)
+- [Stable Audio: Fast Timing-Conditioned Latent Audio Diffusion](https://stability.ai/research/stable-audio-efficient-timing-latent-diffusion)
 
 <!--####################################################################################################-->
 <!--RELATED NEWS-->
