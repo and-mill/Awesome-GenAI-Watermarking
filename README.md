@@ -15,7 +15,7 @@ With generative models, there are approaches which train the model to produce th
 - [3. Audio Domain](#3-audio-domain)
   - [3.1. Papers on Watermarking Audio](#31-papers-on-watermarking-audio)
   - [3.2. Audio Synthesis Datasets](#32-audio-synthesis-datasets)
-  - [3.3. News on Audio](#33-news-on-audio)
+  - [3.3. News on Audio](#33-news-on-audio-watermarking)
   - [3.4. Further Links on Audio Synthesis and Detection](#34-further-links-on-audio-synthesis-and-detection)
 - [4. Related News](#4-related-news)
 - [5. Generative Model stealing Papers](#5-generative-model-stealing-papers)
@@ -179,10 +179,8 @@ With generative models, there are approaches which train the model to produce th
 | [ADD 2022: the first Audio Deep Synthesis Detection Challenge](https://ieeexplore.ieee.org/document/9746939)                                                                                | ICASSP              | 2022                      | [Github](https://github.com/asvspoof-challenge/2021)                       | [Arxiv](https://arxiv.org/abs/2202.08433)                                      | - [Official Chinese challenge website (NO HTTPS!)](http://addchallenge.cn/)                                                                           |
 - For more (but older dataset see [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning))
 
-## 3.3 News on Audio
+## 3.3 News on Audio Watermarking
 - Microsoft: [Introducing the watermark algorithm for synthetic voice identification](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/introducing-the-watermark-algorithm-for-synthetic-voice/ba-p/3298548)
-- Meta AI: [VoiceBox](https://voicebox.metademolab.com/)
-  - SotA Sppech model with many functionalities (noise removal (barking), style transfer, ...)
 
 ## 3.4 Further Links on Audio Synthesis and Detection
 - [Github topics: Audio Synthesis](https://github.com/topics/audio-synthesis)
@@ -190,6 +188,8 @@ With generative models, there are approaches which train the model to produce th
 - [Awesome Deepfakes Detection](https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detection?tab=readme-ov-file#spatiotemporal-based)
 - [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning)
 - [Stable Audio: Fast Timing-Conditioned Latent Audio Diffusion](https://stability.ai/research/stable-audio-efficient-timing-latent-diffusion) (is supposedly also very fast, like HIFI-GAN)
+- Meta AI: [VoiceBox](https://voicebox.metademolab.com/)
+  - SotA Speech model with many functionalities (noise removal (barking), style transfer, ...)
 
 <!--####################################################################################################-->
 <!--RELATED NEWS-->
