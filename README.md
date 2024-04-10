@@ -187,7 +187,7 @@ for more (but older dataset see [Awesome-DeepFake-Learning](https://github.com/B
 - [Github topic: Audio Deepfake Detection](https://github.com/topics/audio-deepfake-detection)
 - [Awesome Deepfakes Detection](https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detection?tab=readme-ov-file#spatiotemporal-based)
 - [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning)
-- [Stable Audio: Fast Timing-Conditioned Latent Audio Diffusion](https://stability.ai/research/stable-audio-efficient-timing-latent-diffusion)
+- [Stable Audio: Fast Timing-Conditioned Latent Audio Diffusion](https://stability.ai/research/stable-audio-efficient-timing-latent-diffusion) (is supposedly also very fast, like HIFI-GAN)
 
 <!--####################################################################################################-->
 <!--RELATED NEWS-->
