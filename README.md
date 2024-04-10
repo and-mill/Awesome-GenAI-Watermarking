@@ -15,7 +15,7 @@ With generative models, there are approaches which train the model to produce th
 - [3. Audio Domain](#3-audio-domain)
   - [3.1. Papers on Watermarking Audio](#31-papers-on-watermarking-audio)
   - [3.2. Audio Synthesis Datasets](#32-audio-synthesis-datasets)
-  - [3.3. News on Audio Watermarking](#33-news-on-audio-watermarking)
+  - [3.3. News on Audio](#33-news-on-audio)
   - [3.4. Further Links on Audio Synthesis and Detection](#34-further-links-on-audio-synthesis-and-detection)
 - [4. Related News](#4-related-news)
 - [5. Generative Model stealing Papers](#5-generative-model-stealing-papers)
