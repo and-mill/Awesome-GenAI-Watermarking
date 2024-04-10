@@ -32,10 +32,11 @@ With generative models, there are approaches which train the model to produce th
 - **Deep fake detection** (Is a digit asset AI-generated?)
   - Counter misinformation
   - Prevent data crawlers from picking up generated content and cause "[Self-Consuming Generative Models Go MAD](https://openreview.net/forum?id=ShjMHfmPs0)"
-- **Deep fake attribution** (By whom and/or through which means has it been generated?)
-  - IP protection
-    - Protect valuable models
-    - Protect valuable training data (e.g. style)
+- **Deep fake attribution** (By whom (which user of A model API) has it been generated?)
+- **Enhanced Model Fingerprinting** (By which model has it been generated?)
+- **IP protection**
+  - Protect valuable models
+  - Protect valuable training data (e.g. style)
 - **Tamper Localization** (Where has an asset been doctored?)
   - see "EditGuard: Versatile Image Watermarking for Tamper Localization and Copyright Protection"
 
