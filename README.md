@@ -177,10 +177,12 @@ With generative models, there are approaches which train the model to produce th
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------------|----------------------------------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [ASVspoof 2021 Challenge](https://www.asvspoof.org/asvspoof2021/asvspoof2021_evaluation_plan.pdf)                                                                                           | -                   | 2021                      | [Github](https://github.com/asvspoof-challenge/2021)                       | [Arxiv](https://arxiv.org/abs/2109.00535)                                      | - Challenge for audio spoofing detection                                                                                                              |
 | [ADD 2022: the first Audio Deep Synthesis Detection Challenge](https://ieeexplore.ieee.org/document/9746939)                                                                                | ICASSP              | 2022                      | [Github](https://github.com/asvspoof-challenge/2021)                       | [Arxiv](https://arxiv.org/abs/2202.08433)                                      | - [Official Chinese challenge website (NO HTTPS!)](http://addchallenge.cn/)                                                                           |
-for more (but older dataset see [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning))
+- For more (but older dataset see [Awesome-DeepFake-Learning](https://github.com/Billy1900/Awesome-DeepFake-Learning))
 
-## 3.3 News on Audio Watermarking
+## 3.3 News on Audio
 - Microsoft: [Introducing the watermark algorithm for synthetic voice identification](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/introducing-the-watermark-algorithm-for-synthetic-voice/ba-p/3298548)
+- Meta AI: [VoiceBox](https://voicebox.metademolab.com/)
+  - SotA Sppech model with many functionalities (noise removal (barking), style transfer, ...)
 
 ## 3.4 Further Links on Audio Synthesis and Detection
 - [Github topics: Audio Synthesis](https://github.com/topics/audio-synthesis)
