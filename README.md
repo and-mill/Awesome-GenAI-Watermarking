@@ -17,10 +17,11 @@ With generative models, there are approaches which train the model to produce th
   - [3.2. Audio Synthesis Datasets](#32-audio-synthesis-datasets)
   - [3.3. News on Audio](#33-news-on-audio-watermarking)
   - [3.4. Further Links on Audio Synthesis and Detection](#34-further-links-on-audio-synthesis-and-detection)
-- [4. Related News](#4-related-news)
-- [5. Generative Model stealing Papers](#5-generative-model-stealing-papers)
-- [6. Survey Papers](#6-survey-papers)
-- [6.1 A Systematic Review on Model Watermarking for Neural Networks](#61-a-systematic-review-on-model-watermarking-for-neural-networks)
+- [4. Text Domain](#4-text-domain) 
+- [4. Related News](#5-related-news)
+- [5. Generative Model stealing Papers](#6-generative-model-stealing-papers)
+- [6. Survey Papers](#7-survey-papers)
+- [6.1 A Systematic Review on Model Watermarking for Neural Networks](#71-a-systematic-review-on-model-watermarking-for-neural-networks)
 
 <!--####################################################################################################-->
 <!--INTRODUCTION-->
@@ -135,7 +136,6 @@ With generative models, there are approaches which train the model to produce th
 | Paper                                                                                                                                                                                           | Proceedings/Journal | Venue Year / Last Updated | Code                                                            | Alternative PDF Source                        | Notes                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------------|-----------------------------------------------------------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Squint Hard Enough: Attacking Perceptual Hashing with Adversarial Machine Learning](https://www.usenix.org/conference/usenixsecurity23/presentation/prokos)                                    | USENIX              | 2022                      | -                                                               | -                                             | - Attacks on perceptual hashes                                                                                                                                                                                       |
-| [Adversarial Watermarking Transformer: Towards Tracing Text Provenance with Data Hiding](https://ieeexplore.ieee.org/document/9519400)                                                          | S&P                 | 2021                      | [Github](https://github.com/S-Abdelnabi/awt)                    | [Arxiv](https://arxiv.org/abs/2009.03015)     | - Text domain                                                                                                                                                                                                        |
 | [Evading Watermark based Detection of AI-Generated Content](https://dl.acm.org/doi/10.1145/3576915.3623189)                                                                                     | CCS                 | 2023                      | [Github](https://github.com/zhengyuan-jiang/WEvade)             | [Arxiv](https://arxiv.org/abs/2305.03807)     | - Evaluation of robustness of image watermarks + Adversarial sample for evasion                                                                                                                                      |
 | [Diffusion Models for Adversarial Purification](https://proceedings.mlr.press/v162/nie22a.html)                                                                                                 | ICML                | 2022                      | [Github](https://github.com/NVlabs/DiffPure)                    | [Arxiv](https://arxiv.org/abs/2205.07460)     | - Defense against adversarial pertubation, including imperceptible watermarks in images                                                                                                                              |
 | [HiDDeN: Hiding Data With Deep Networks](https://dl.acm.org/doi/abs/10.1007/978-3-030-01267-0_40)                                                                                               | ECCV                | 2018                      | [Github](https://github.com/jirenz/HiDDeN)                      | [Arxiv](https://arxiv.org/pdf/1807.09937.pdf) | - Main tool used in Stable Signature<br>- Contains differentiable approx. of JPEG compression<br>- Dynamic watermarking                                                                                              |
@@ -204,9 +204,21 @@ With generative models, there are approaches which train the model to produce th
     - includes tools for detection
 
 <!--####################################################################################################-->
+<!--TEXT DOMAIN-->
+<!--####################################################################################################-->
+# 4. Text Domain
+| Paper                                                                                                                                  | Proceedings/Journal | Venue Year / Last Updated | Code                                                  | Alternative PDF Source                     | Notes  |
+|----------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------------|-------------------------------------------------------|--------------------------------------------|--------|
+| [Adversarial Watermarking Transformer: Towards Tracing Text Provenance with Data Hiding](https://ieeexplore.ieee.org/document/9519400) | S&P                 | 2021                      | [Github](https://github.com/S-Abdelnabi/awt)          | [Arxiv](https://arxiv.org/abs/2009.03015)  | -      |
+| https://arxiv.org/abs/2402.07518                                                                                                       | -                   | 2023                      | [Github](https://github.com/S-Abdelnabi/awt)          | [Arxiv](https://arxiv.org/abs/2009.03015)  | - Code |
+| Resilient Watermarking for LLM-Generated Codes                                                                                         | -                   | 2024                      | [Github Appendix](https://github.com/boutiquelee/ACW) | [Arxiv](https://arxiv.org/abs/2402.07518)  | - Code |
+
+This domain is very different due to low entropy in generating next tokens. Watermark removal seems to be very easy.
+
+<!--####################################################################################################-->
 <!--RELATED NEWS-->
 <!--####################################################################################################-->
-# 4. Related News
+# 5. Related News
 
 ---
 - [Coalition for Content Provenance and Authenticity (C2PA)](https://c2pa.org/)
@@ -250,7 +262,7 @@ With generative models, there are approaches which train the model to produce th
 <!--####################################################################################################-->
 <!--GENERATIVE MODEL STEALING-->
 <!--####################################################################################################-->
-# 5. Generative Model stealing Papers
+# 6. Generative Model stealing Papers
 
 ---
 | Paper                                                                                                                                               | Proceedings/Journal | Venue Year / Last Updated | Code | Alternative PDF Source                    | Notes |
@@ -262,7 +274,7 @@ With generative models, there are approaches which train the model to produce th
 <!--####################################################################################################-->
 <!--SURVEY PAPERS-->
 <!--####################################################################################################-->
-# 6. Survey Papers
+# 7. Survey Papers
 
 ---
 | Paper                                                                                                                                                  | Proceedings/Journal   | Venue Year / Last Updated | Code | Alternative PDF Source                    | Notes                                                                                                         |
@@ -275,7 +287,7 @@ With generative models, there are approaches which train the model to produce th
 | Detecting Multimedia Generated by Large AI Models: A Survey                                                                                            | -                     | 2024                      | -    | [Arxiv](https://arxiv.org/abs/2402.00045) | - About detecting GenAI in general                                                                            |
 | Audio Deepfake Detection: A Survey                                                                                                                     | -                     | 2023                      | -    | [Arxiv](https://arxiv.org/abs/2308.14970) | - Contains overview of spoofed audio datasets, spoofing methods, and detection methods<br/>- Very good servey |
 
-## 6.1 [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)
+## 7.1 [A Systematic Review on Model Watermarking for Neural Networks](https://www.frontiersin.org/articles/10.3389/fdata.2021.729663/full)
 Summarization of the systematization given in this review.
 ### Taxonomy
 - Embedding method
