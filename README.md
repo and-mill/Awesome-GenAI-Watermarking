@@ -105,6 +105,11 @@ With generative models, there are approaches which train the model to produce th
   - Attacker has full access to a generative AI model
 - ... TODO
 
+### Difference between Watermarking and Cryptography
+| Paper                                                                                            | Proceedings/Journal | Venue Year / Last Updated | Code | Alternative PDF Source                                                                    | Notes  |
+|--------------------------------------------------------------------------------------------------|---------------------|---------------------------|------|-------------------------------------------------------------------------------------------|--------|
+| [Watermarking is not Cryptography](https://link.springer.com/chapter/10.1007/11922841_1#citeas)  | IWDW                | 2006                      | -    | [Author webpage](http://www0.cs.ucl.ac.uk/staff/ingemar/Content/papers/2006/IWDW2006.pdf) | - TODO |
+
 <!--####################################################################################################-->
 <!--IMAGE DOMAIN-->
 <!--####################################################################################################-->
