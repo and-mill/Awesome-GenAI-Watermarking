@@ -19,10 +19,11 @@ With generative models, there are approaches which train the model to produce th
   - [3.3. News on Audio](#33-news-on-audio-watermarking)
   - [3.4. Further Links on Audio Synthesis and Detection](#34-further-links-on-audio-synthesis-and-detection)
 - [4. Text Domain](#4-text-domain) 
-- [4. Related News](#5-related-news)
-- [5. Generative Model stealing Papers](#6-generative-model-stealing-papers)
-- [6. Survey Papers](#7-survey-papers)
-- [6.1 A Systematic Review on Model Watermarking for Neural Networks](#71-a-systematic-review-on-model-watermarking-for-neural-networks)
+- [5. Related News](#5-related-news)
+- [6. Generative Model stealing Papers](#6-generative-model-stealing-papers)
+- [7. Survey Papers](#7-survey-papers)
+- [7.1 A Systematic Review on Model Watermarking for Neural Networks](#71-a-systematic-review-on-model-watermarking-for-neural-networks)
+- [8 Further Links](#8-further-links)
 
 <!--####################################################################################################-->
 <!--INTRODUCTION-->
@@ -382,4 +383,5 @@ Summarization of the systematization given in this review.
 - Using Model Fingerprints to Identify Potentially Stolen Instances
   - No additional action needed, just recognizing a model based on some criteria
 
-
+# 8 [Further Links]()
+- Awesome github with resources on neural IP protection https://github.com/ZJZAC/awesome-deep-model-IP-protection
