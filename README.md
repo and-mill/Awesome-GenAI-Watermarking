@@ -409,4 +409,8 @@ Summarization of the systematization given in this review.
   - No additional action needed, just recognizing a model based on some criteria
 
 # 8 [Further Links]()
+
+### Practical tools for text watermark checks
+- [Mydentify AI Watermark and Claude Checker](https://mydentify.com/tools/ai-watermark-detector) — browser tool for checking AI-watermark signals and Claude-related text artifacts.
+
 - Awesome github with resources on neural IP protection https://github.com/ZJZAC/awesome-deep-model-IP-protection
