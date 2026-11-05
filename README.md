@@ -216,6 +216,7 @@ Watermarking integrated into synthesis models, codec training, or their training
 
 | Year | Paper | Venue / status | Code / resources | Focus |
 | --- | --- | --- | --- | --- |
+| 2026 | [EchoMark: Perceptual Acoustic Environment Transfer with Watermark-Embedded Room Impulse Response](https://arxiv.org/abs/2511.06458) | ICME (accepted; author-reported) | — | Generates watermarked room impulse responses for acoustic environment transfer; the watermark stays detectable after convolution with arbitrary speech. |
 | 2026 | [MusicMark: A Robust Generative Watermarking Framework for Music Generation](https://arxiv.org/abs/2607.11117) | Under review (preprint) | — | Embeds watermarks into semantic latents during generation using an adapter on a frozen diffusion backbone; reports robustness to neural-codec resynthesis and cover-song attacks. |
 | 2026 | [NeuMark-Native: Robust Text-to-Speech-Native Watermarking Through Full Utilization of Neural Audio Codec Latent Space](https://arxiv.org/abs/2610.05215) | Preprint | — | Adapts watermark modules to TTS-generated codec tokens while freezing the TTS model and codec. |
 | 2025 | [Latent Watermarking of Audio Generative Models](https://ieeexplore.ieee.org/document/10889782/) | ICASSP | — | Watermarking designed to persist through audio-codec latent representations and generation. |
@@ -468,7 +469,11 @@ Removal, forgery, detector evasion, key inference, model purification, and trans
 
 | Year | Paper | Venue / status | Code / resources | Focus |
 | --- | --- | --- | --- | --- |
+| 2026 | [Audio Pirates: Black-box Audio Watermark Removal via Diffusion Priors](https://arxiv.org/abs/2605.30614) | Preprint | [Code](https://github.com/DiffErase/Differase) · [Project](https://differase.github.io/DiffErase) | DiffErase: black-box watermark removal via diffusion-based regeneration. |
+| 2026 | [Learning to Evade: Adaptive Attacks on Audio Watermarking](https://arxiv.org/abs/2606.22310) | Interspeech (accepted; author-reported) | [Project](https://adaptiveaudiowmattack.github.io/) | AWM: two-stage optimization that removes watermarks while evading distribution-based tamper detection. |
+| 2026 | [SweepMark: Query-Free and High-Fidelity Attacks on Robust Audio Watermarking](https://arxiv.org/abs/2609.34003) | Preprint | — | Query-free black-box removal targeting stationary and non-stationary spectral watermark artifacts. |
 | 2026 | [The Vulnerability of Neural Audio Watermarks under Speech Enhancement](https://arxiv.org/abs/2609.29040) | Preprint | — | Evaluates removal using speech enhancement and added noise against multiple audio watermark systems. |
+| 2026 | [Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking](https://ojs.aaai.org/index.php/AAAI/article/view/39997) | AAAI | — | Overwrites a legitimate watermark with an attacker's own under white-, gray-, and black-box access, hijacking audio ownership claims. |
 
 
 <a id="bench"></a>
@@ -483,6 +488,7 @@ Includes experimental frameworks, comparative studies, watermark localization, a
 | 2026 | [WMVLM: Evaluating Diffusion Model Image Watermarking via Vision-Language Models](https://proceedings.mlr.press/v306/yang26bs.html) | ICML | — | Vision-language-model-based evaluation of diffusion watermarks. |
 | 2025 | [Mark My Words: Analyzing and Evaluating Language Model Watermarks](https://arxiv.org/abs/2312.00273) | IEEE SaTML | [Code](https://github.com/wagner-group/MarkMyWords) | Text-watermark benchmark covering quality, detection length, and tamper resistance. |
 | 2025 | [On the Coexistence and Ensembling of Watermarks](https://proceedings.nips.cc/paper_files/paper/2025/hash/99fecf765ecf62c3e3175ef2278f3315-Abstract-Conference.html) | NeurIPS | — | Studies the interaction of multiple image watermarks and ensembles. |
+| 2025 | [SoK: How Robust is Audio Watermarking in Generative AI models?](https://arxiv.org/abs/2503.19176) | Preprint | [Project](https://sokaudiowm.github.io/) | Taxonomy of 22 audio watermarking schemes evaluated against 22 signal, physical, and AI-based removal attacks. |
 | 2025 | [WaterSeeker: Pioneering Efficient Detection of Watermarked Segments in Large Documents](https://aclanthology.org/2025.findings-naacl.156/) | Findings of NAACL | [Code](https://github.com/THU-BPM/WaterSeeker) | Localizes short watermarked segments inside long documents. |
 | 2024 | [AudioMarkBench: Benchmarking Robustness of Audio Watermarking](https://arxiv.org/abs/2406.06979) | NeurIPS Datasets and Benchmarks | [Code](https://github.com/mileskuo42/AudioMarkBench) | Audio watermark evaluation under common and adversarial transformations. |
 | 2024 | [Finding needles in a haystack: A Black-Box Approach to Invisible Watermark Detection](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04872.pdf) · [arXiv](https://arxiv.org/abs/2403.15955) | ECCV | [Code](https://github.com/pmzzs/WMD) | WMD: detects invisible watermarks using reference datasets without the original watermark decoder. |
@@ -605,6 +611,7 @@ For additions or corrections, provide the exact paper title, a stable paper link
 | ICCV | IEEE/CVF International Conference on Computer Vision |
 | ICLR | International Conference on Learning Representations |
 | ICML | International Conference on Machine Learning |
+| ICME | IEEE International Conference on Multimedia and Expo |
 | IEEE S&P | IEEE Symposium on Security and Privacy |
 | IEEE SaTML | IEEE Conference on Secure and Trustworthy Machine Learning |
 | IEEE TMM / TSE | IEEE Transactions on Multimedia / Software Engineering |
